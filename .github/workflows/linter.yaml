@@ -1,0 +1,50 @@
+name: linter
+
+on:
+    push:
+        paths-ignore:
+            - "*.md"
+            - "LICENSE"
+            - ".gitignore"
+            - "Dockerfile"
+            - "compose.yaml"
+            - ".dockerignore"
+            - ".env*"
+    pull_request:
+        paths-ignore:
+            - "*.md"
+            - "LICENSE"
+            - ".gitignore"
+            - "Dockerfile"
+            - "compose.yaml"
+            - ".dockerignore"
+            - ".env*"
+
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-bun@v2
+              with:
+                  bun-version: 1.2.2
+
+            - name: Cache dependencies
+              uses: actions/cache@v4
+              with:
+                  path: ~/.bun/install/cache
+                  key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lock') }}
+                  restore-keys: ${{ runner.os }}-bun-
+
+            - name: Install dependencies
+              run: bun install --frozen-lockfile --silent
+
+            - name: Run formatter
+              run: bunx format
+
+            - name: Run linter
+              run: bunx lint
