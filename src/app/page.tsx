@@ -1,4 +1,5 @@
 import React from "react";
+
 import { platformFeatures } from "@/config/landing";
 
 export default function Home() {
@@ -15,12 +16,10 @@ export default function Home() {
                         </h2>
                     </div>
                     <p className="max-w-2xl text-balance text-lg text-muted-foreground sm:text-lg md:text-xl">
-                        Цель проекта — разработать систему с использованием искусственного
-                        интеллекта, которая распознает и позволит автоматически фиксировать
-                        время прихода, ухода студентов и время нахождения в учебном заведении,
-                        функциональный модуль минимизирует ручной труд, исключит
-                        человеческий фактор и оптимизирует посещаемость студентов учебных
-                        заведениях.
+                        Цель проекта — разработать систему с использованием искусственного интеллекта, которая
+                        распознает и позволит автоматически фиксировать время прихода, ухода студентов и время
+                        нахождения в учебном заведении, функциональный модуль минимизирует ручной труд, исключит
+                        человеческий фактор и оптимизирует посещаемость студентов учебных заведениях.
                     </p>
                 </section>
                 <section className="container flex max-w-6xl flex-col gap-8 pt-32">
@@ -35,12 +34,8 @@ export default function Home() {
                                 <div className="relative rounded-xl border bg-muted/25">
                                     <div className="flex flex-col px-4 py-5 sm:p-6">
                                         <div className="space-y-2">
-                                            <p className="font-semibold text-foreground">
-                                                {feature.title}
-                                            </p>
-                                            <p className="text-muted-foreground">
-                                                {feature.description}
-                                            </p>
+                                            <p className="font-semibold text-foreground">{feature.title}</p>
+                                            <p className="text-muted-foreground">{feature.description}</p>
                                         </div>
                                     </div>
                                 </div>
