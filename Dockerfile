@@ -1,31 +1,27 @@
 ARG BUN_VERSION=1.2
 FROM oven/bun:${BUN_VERSION}-alpine AS base
-WORKDIR /usr/src/app
+WORKDIR /app
+COPY package.json .
 
-# install dependencies into temp directory
-# this will cache them and speed up future builds
-FROM base AS install
-RUN mkdir -p /temp/prod
-COPY package.json bun.lock /temp/prod/
-RUN cd /temp/prod && bun install --frozen-lockfile
+FROM base AS prod-deps
+COPY bun.lock .
+RUN --mount=type=cache,id=bun,target=~/.bun/install/cache \
+    bun install --frozen-lockfile --production
 
-# copy node_modules from temp directory
-# then copy all (non-ignored) project files into the image
-FROM base AS prerelease
-COPY --from=install /temp/prod/node_modules node_modules
+FROM prod-deps AS deps
+RUN --mount=type=cache,id=bun,target=~/.bun/install/cache \
+    bun install --frozen-lockfile
+
+FROM deps AS build
 COPY . .
-
-# build
-ENV NODE_ENV=production
+ENV NODE_ENV=production, NEXT_TELEMETRY_DISABLED=1
 RUN bun run build
 
-# copy production dependencies and source code into final image
-FROM base AS release
-COPY --from=install /temp/prod/node_modules node_modules
-COPY --from=prerelease /usr/src/app/.next .next
-COPY --from=prerelease /usr/src/app/package.json .
+FROM prod-deps AS release
+COPY .env* .
+COPY --from=build /app/.next .next
 
-# Run the app
+ENV NEXT_TELEMETRY_DISABLED=1
 USER bun
-EXPOSE 3000/tcp
+EXPOSE 3000
 ENTRYPOINT ["bun", "run", "start"]
