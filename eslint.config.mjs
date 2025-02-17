@@ -37,8 +37,8 @@ const jsConfig = {
 };
 
 export default tseslint.config(
-    ...compat.extends("next/core-web-vitals", "next/typescript"),
     includeIgnoreFile(gitignorePath),
     tsConfig,
     jsConfig,
+    ...compat.extends("next/core-web-vitals", "next/typescript"),
 );
