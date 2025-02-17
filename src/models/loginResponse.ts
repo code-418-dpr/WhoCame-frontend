@@ -1,5 +1,4 @@
-
-export type LoginResponse = {
+export interface LoginResponse {
     accessToken: string;
     refreshToken: string;
-};
+}
