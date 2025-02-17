@@ -1,9 +1,8 @@
-import { ErrorType } from "./ErrorType";
+import { ErrorType } from "./errorType";
 
-
-export type Error = {
+export interface Error {
     code: string;
     message: string;
     type: ErrorType;
     invalidField: string;
-};
+}
