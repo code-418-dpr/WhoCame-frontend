@@ -42,13 +42,13 @@
 3. Запустите сборку образа:
 
 ```shell
-docker build -t whocame_frontend
+docker build -t whocame_frontend .
 ```
 
 4. Теперь запускать образ можно командой:
 
 ```shell
-docker run -d --name whocame_frontend_standalone whocame_frontend
+docker run -d --name whocame_frontend_standalone -p 3000:3000 whocame_frontend
 ```
 
 ### Без использования Docker

@@ -1,5 +1,5 @@
 ARG BUN_VERSION=1.2
-FROM oven/bun:${BUN_VERSION}-alpine AS base
+FROM oven/bun:${BUN_VERSION}-slim AS base
 WORKDIR /app
 COPY package.json .
 
@@ -14,7 +14,8 @@ RUN --mount=type=cache,id=bun,target=~/.bun/install/cache \
 
 FROM deps AS build
 COPY . .
-ENV NODE_ENV=production, NEXT_TELEMETRY_DISABLED=1
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
 RUN bun run build
 
 FROM prod-deps AS release
