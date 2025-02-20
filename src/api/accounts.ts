@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 
 import { Envelope } from "@/models/envelope";
-import { LoginResponse } from "@/models/loginResponse";
+import { LoginResponse } from "@/models/login-response";
 
 import { API_URL, api } from "./api";
 

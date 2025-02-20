@@ -1,4 +1,4 @@
-import { ErrorType } from "./errorType";
+import { ErrorType } from "./error-type";
 
 export interface Error {
     code: string;

@@ -1,9 +1,8 @@
-import { UserRole } from "@prisma/client";
 import * as z from "zod";
 
 export const PersonalSettingsSchema = z.object({
     name: z.optional(z.string()),
-    role: z.enum([UserRole.CENTRAL_REP, UserRole.REGIONAL_REP]),
+    // role: z.enum([UserRole.CENTRAL_REP, UserRole.REGIONAL_REP]),
     email: z.optional(z.string().email()),
 });
 
@@ -19,7 +18,7 @@ export const PasswordSettingsSchema = z
         {
             message: "Новый пароль обязателен к заполнению",
             path: ["newPassword"],
-        }
+        },
     )
     .refine(
         (data) => {
@@ -28,17 +27,13 @@ export const PasswordSettingsSchema = z
         {
             message: "Текущий пароль обязателен к заполнению",
             path: ["currentPassword"],
-        }
+        },
     );
 
 export const SetPasswordSchema = z
     .object({
-        password: z.optional(
-            z.string().min(4, { message: "Пароль должен быть длиннее 4 символов" })
-        ),
-        repeatPassword: z.optional(
-            z.string().min(4, { message: "Пароль должен быть длиннее 4 символов" })
-        ),
+        password: z.optional(z.string().min(4, { message: "Пароль должен быть длиннее 4 символов" })),
+        repeatPassword: z.optional(z.string().min(4, { message: "Пароль должен быть длиннее 4 символов" })),
     })
     .refine(
         (data) => {
@@ -47,7 +42,7 @@ export const SetPasswordSchema = z
         {
             message: "Пароли не совпадают",
             path: ["repeatPassword"],
-        }
+        },
     );
 
 export const LoginSchema = z.object({

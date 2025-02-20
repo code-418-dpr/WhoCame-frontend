@@ -17,7 +17,7 @@ type Props = {
     links: { href: string; label: string }[];
 };
 
-export function MobileNavbar({ /*links*/ }: Props) {
+export function MobileNavbar({} /*links*/ : Props) {
     /*
     const [open, setOpen] = useState(false);
     const user = useCurrentUser();
@@ -46,7 +46,7 @@ export function MobileNavbar({ /*links*/ }: Props) {
         );
     };
 */
-    return (<div></div>);
+    return <div></div>;
     /*
     return (
         <Sheet open={open} onOpenChange={setOpen}>

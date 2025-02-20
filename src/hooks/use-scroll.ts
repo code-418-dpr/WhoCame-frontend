@@ -9,7 +9,9 @@ export function useScroll(threshold: number) {
 
     useEffect(() => {
         window.addEventListener("scroll", onScroll);
-        return () => { window.removeEventListener("scroll", onScroll) };
+        return () => {
+            window.removeEventListener("scroll", onScroll);
+        };
     }, [onScroll]);
 
     return scrolled;

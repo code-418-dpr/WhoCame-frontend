@@ -2,49 +2,32 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { User, UserRole } from "@prisma/client";
 
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-import { useScroll } from "@/hooks/use-scroll";
-import { UserButton } from "@/components/auth/user-button";
 import { MobileNavbar } from "@/components/navbar/mobile-navbar";
 import { NavbarLink } from "@/components/navbar/navbar-link";
+import { siteConfig } from "@/config/site";
+import { useScroll } from "@/hooks/use-scroll";
+import { cn } from "@/lib/utils";
 
-export function Navbar({
-    user,
-}: {
-    user:
-        | Partial<
-              User & {
-                  role: UserRole;
-              }
-          >
-        | undefined;
-}) {
+export function Navbar() {
     const scrolled = useScroll(50);
 
     const links: { href: string; label: string }[] = [];
 
-    if (user?.role === UserRole.CENTRAL_REP) {
-        links.push({ href: "/admin", label: "Панель администратора" });
-    } else if (user?.role === UserRole.REGIONAL_REP) {
-        links.push({ href: "/regional", label: "Управление представительством" });
-    }
-
-    if (user) {
-        links.push({ href: "/settings", label: "Настройки" });
-    }
+    // if (user?.role === UserRole.CENTRAL_REP) {
+    //     links.push({ href: "/admin", label: "Панель администратора" });
+    // } else if (user?.role === UserRole.REGIONAL_REP) {
+    //     links.push({ href: "/regional", label: "Управление представительством" });
+    // }
+    //
+    // if (user) {
+    //     links.push({ href: "/settings", label: "Настройки" });
+    // }
 
     links.push(...siteConfig.navLinks);
 
     return (
-        <div
-            className={cn(
-                "fixed left-0 right-0 top-0 z-50 print:static",
-                scrolled && "backdrop-blur-xl"
-            )}
-        >
+        <div className={cn("fixed left-0 right-0 top-0 z-50 print:static", scrolled && "backdrop-blur-xl")}>
             <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-6 rounded-xl p-4 md:gap-10">
                 <Link className="flex items-center gap-2" href="/">
                     <Image src="/logo.svg" alt="FSPodium" width={28} height={28} />
@@ -58,7 +41,6 @@ export function Navbar({
                             </NavbarLink>
                         ))}
                     </div>
-                    <UserButton user={user} />
                 </div>
                 <div className="flex md:hidden">
                     <MobileNavbar links={links} />

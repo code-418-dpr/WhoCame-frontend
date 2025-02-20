@@ -1,19 +1,13 @@
 "use client";
-/*
-import React, { useState } from "react";
+
 import { Check, ChevronsUpDown } from "lucide-react";
 
-import { cn } from "@/lib/utils";
+import React, { useState } from "react";
+
 import { Button } from "@/components/ui/button";
-import {
-    Command,
-    CommandEmpty,
-    CommandGroup,
-    CommandInput,
-    CommandItem,
-    CommandList,
-} from "@/components/ui/command";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
 
 interface Item {
     id: string;
@@ -28,13 +22,7 @@ type ComboboxProps = {
     disabled?: boolean;
 };
 
-export function Combobox({
-    items,
-    selectedId,
-    onIdChange,
-    className,
-    disabled,
-}: ComboboxProps): React.ReactNode {
+export function Combobox({ items, selectedId, onIdChange, className, disabled }: ComboboxProps): React.ReactNode {
     const [open, setOpen] = useState(false);
 
     return (
@@ -47,9 +35,7 @@ export function Combobox({
                     className={cn("w-[200px] justify-between", className)}
                     disabled={disabled}
                 >
-                    {selectedId
-                        ? items.find((item) => item.id === selectedId)?.name
-                        : "Выберите из списка..."}
+                    {selectedId ? items.find((item) => item.id === selectedId)?.name : "Выберите из списка..."}
                     <ChevronsUpDown className="h-4 w-4 opacity-50" />
                 </Button>
             </PopoverTrigger>
@@ -65,10 +51,9 @@ export function Combobox({
                                     value={item.name}
                                     onSelect={(currentValue) => {
                                         onIdChange(
-                                            currentValue ===
-                                                items.find((item) => item.id === selectedId)?.name
+                                            currentValue === items.find((item) => item.id === selectedId)?.name
                                                 ? ""
-                                                : item.id
+                                                : item.id,
                                         );
                                         setOpen(false);
                                     }}
@@ -77,10 +62,9 @@ export function Combobox({
                                     <Check
                                         className={cn(
                                             "ml-auto",
-                                            items?.find((item) => item.id === selectedId)?.name ===
-                                                item.name
+                                            items?.find((item) => item.id === selectedId)?.name === item.name
                                                 ? "opacity-100"
-                                                : "opacity-0"
+                                                : "opacity-0",
                                         )}
                                     />
                                 </CommandItem>
@@ -92,4 +76,3 @@ export function Combobox({
         </Popover>
     );
 }
-*/

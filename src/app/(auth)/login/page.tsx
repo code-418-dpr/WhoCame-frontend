@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import { LoginForm } from "@/components/forms/login-form";
 
 export default async function LoginPage(props: {
     searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
@@ -16,7 +15,6 @@ export default async function LoginPage(props: {
     return (
         <div className="w-[min(calc(100%-2rem),400px)] space-y-4">
             <h1 className="pb-4 text-center text-3xl font-semibold">Добро пожаловать</h1>
-            <LoginForm />
             <Button variant="link" className="w-full font-normal" size="sm" asChild>
                 <Link href={registerUrl}>Подать заявку на регистрацию представительства</Link>
             </Button>
