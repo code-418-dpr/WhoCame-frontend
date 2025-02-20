@@ -8,7 +8,7 @@
 [![linter](https://github.com/code-418-dpr/WhoCame-frontend/actions/workflows/linter.yaml/badge.svg)](https://github.com/code-418-dpr/WhoCame-frontend/actions/workflows/linter.yaml)
 [![build](https://github.com/code-418-dpr/WhoCame-frontend/actions/workflows/build.yaml/badge.svg)](https://github.com/code-418-dpr/WhoCame-frontend/actions/workflows/build.yaml)
 
-Модуль фронтенда для проекта WhoCame
+Модуль фронтенда для проекта [WhoCame](https://github.com/code-418-dpr/WhoCame)
 
 ## Особенности реализации
 
