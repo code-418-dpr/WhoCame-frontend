@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "lint": "bun run --bun eslint --fix .",
-        "stylelint": "stylelint **/*.css --fix --ignore-path .gitignore",
+        "lint:styles": "bun run --bun stylelint **/*.css --fix --ignore-path .gitignore",
         "format": "bun run --bun prettier . --write --ignore-path .gitignore",
         "dev": "bun run --bun next dev --turbopack",
         "build": "bun run --bun next build",
@@ -47,7 +47,6 @@
         "autoprefixer": "^10.4.20",
         "cmdk": "^1.0.4",
         "eslint": "^9.21.0",
-        "eslint-config-next": "^15.2.1",
         "postcss": "^8",
         "prettier": "^3.5.1",
         "react-hook-form": "^7.54.2",
