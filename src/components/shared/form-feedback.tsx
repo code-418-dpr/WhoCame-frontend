@@ -1,9 +1,9 @@
 import { CircleCheckIcon, TriangleAlertIcon } from "lucide-react";
 
-type Props = {
+interface Props {
     errorMessage?: string;
     successMessage?: string;
-};
+}
 
 export function FormFeedback({ errorMessage, successMessage }: Props) {
     if (!errorMessage && !successMessage) {

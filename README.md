@@ -1,14 +1,15 @@
-# WhoCame-frontend
+# VZOR-frontend
 
-[![license](https://img.shields.io/github/license/code-418-dpr/WhoCame-frontend)](https://opensource.org/licenses/MIT)
-[![release](https://img.shields.io/github/v/release/code-418-dpr/WhoCame-frontend?include_prereleases)](https://github.com/code-418-dpr/WhoCame-frontend/releases)
-[![downloads](https://img.shields.io/github/downloads/code-418-dpr/WhoCame-frontend/total)](https://github.com/code-418-dpr/WhoCame-frontend/releases)
-[![code size](https://img.shields.io/github/languages/code-size/code-418-dpr/WhoCame-frontend.svg)](https://github.com/code-418-dpr/WhoCame-frontend)
+[![license](https://img.shields.io/github/license/code-418-dpr/VZOR-frontend)](https://opensource.org/licenses/MIT)
+[![release](https://img.shields.io/github/v/release/code-418-dpr/VZOR-frontend?include_prereleases)](https://github.com/code-418-dpr/VZOR-frontend/releases)
+[![downloads](https://img.shields.io/github/downloads/code-418-dpr/VZOR-frontend/total)](https://github.com/code-418-dpr/VZOR-frontend/releases)
+[![code size](https://img.shields.io/github/languages/code-size/code-418-dpr/VZOR-frontend.svg)](https://github.com/code-418-dpr/VZOR-frontend)
 
-[![linter](https://github.com/code-418-dpr/WhoCame-frontend/actions/workflows/linter.yaml/badge.svg)](https://github.com/code-418-dpr/WhoCame-frontend/actions/workflows/linter.yaml)
-[![build](https://github.com/code-418-dpr/WhoCame-frontend/actions/workflows/build.yaml/badge.svg)](https://github.com/code-418-dpr/WhoCame-frontend/actions/workflows/build.yaml)
+[![linters](https://github.com/code-418-dpr/VZOR-frontend/actions/workflows/linters.yaml/badge.svg)](https://github.com/code-418-dpr/VZOR-frontend/actions/workflows/linters.yaml)
+[![codeql](https://github.com/code-418-dpr/VZOR-frontend/actions/workflows/codeql.yaml/badge.svg)](https://github.com/code-418-dpr/VZOR-frontend/actions/workflows/codeql.yaml)
+[![build](https://github.com/code-418-dpr/VZOR-frontend/actions/workflows/build.yaml/badge.svg)](https://github.com/code-418-dpr/VZOR-frontend/actions/workflows/build.yaml)
 
-Модуль фронтенда для проекта [WhoCame](https://github.com/code-418-dpr/WhoCame)
+Модуль фронтенда для проекта [VZOR](https://github.com/code-418-dpr/VZOR)
 
 ## Особенности реализации
 
@@ -42,13 +43,13 @@
 3. Запустите сборку образа:
 
 ```shell
-docker build -t whocame_frontend .
+docker build -t vzor-frontend .
 ```
 
 4. Теперь запускать образ можно командой:
 
 ```shell
-docker run -d --name whocame_frontend_standalone -p 3000:3000 whocame_frontend
+docker run -d --name vzor-frontend-standalone -p 3000:3000 vzor-frontend
 ```
 
 ### Без использования Docker

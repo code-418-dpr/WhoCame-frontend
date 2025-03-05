@@ -13,9 +13,9 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { UserAvatar } from "@/components/auth/user-avatar";
  */
 
-type Props = {
+interface Props {
     links: { href: string; label: string }[];
-};
+}
 
 export function MobileNavbar({} /*links*/ : Props) {
     /*

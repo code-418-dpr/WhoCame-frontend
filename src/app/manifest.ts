@@ -2,9 +2,9 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: "WhoCame",
-        short_name: "WhoCame",
-        description: "A Progressive Web App for WhoCame project",
+        name: "VZOR AI",
+        short_name: "VZOR",
+        description: "A Progressive Web App for VZOR AI project",
         start_url: "/",
         display: "standalone",
         background_color: "#08091D",

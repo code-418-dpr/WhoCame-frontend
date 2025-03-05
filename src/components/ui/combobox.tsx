@@ -14,13 +14,13 @@ interface Item {
     name: string;
 }
 
-type ComboboxProps = {
+interface ComboboxProps {
     items: Item[];
     selectedId: string;
     onIdChange: (value: string) => void;
     className?: string;
     disabled?: boolean;
-};
+}
 
 export function Combobox({ items, selectedId, onIdChange, className, disabled }: ComboboxProps): React.ReactNode {
     const [open, setOpen] = useState(false);
@@ -62,7 +62,7 @@ export function Combobox({ items, selectedId, onIdChange, className, disabled }:
                                     <Check
                                         className={cn(
                                             "ml-auto",
-                                            items?.find((item) => item.id === selectedId)?.name === item.name
+                                            items.find((item) => item.id === selectedId)?.name === item.name
                                                 ? "opacity-100"
                                                 : "opacity-0",
                                         )}

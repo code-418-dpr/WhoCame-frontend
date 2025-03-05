@@ -10,7 +10,7 @@ interface UserInterface {
 export function UserAvatar({ user, className }: { user: UserInterface; className?: string }): React.ReactNode {
     return (
         <Avatar className={cn(className)}>
-            <AvatarImage src={user?.image || ""} />
+            <AvatarImage src={user.image || ""} />
             <AvatarFallback className="border border-white/20 bg-transparent">
                 <UserIcon className="text-white" />
             </AvatarFallback>

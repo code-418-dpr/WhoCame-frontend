@@ -9,7 +9,7 @@ export default function Home() {
                 <section className="flex flex-col items-center gap-10 text-center">
                     <div>
                         <h1 className="font-satoshi text-balance bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-500 bg-clip-text text-[48px] font-black leading-[1.15] tracking-tight text-transparent sm:text-[56px] md:text-[80px] md:leading-[1.15]">
-                            WhoCame
+                            VZOR AI
                         </h1>
                         <h2 className="font-satoshi text-balance text-[48px] font-black leading-[1.15] tracking-tight sm:text-[56px] md:text-[64px] md:leading-[1.15]">
                             Платформа для учёта посещаемости студентов

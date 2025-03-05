@@ -4,19 +4,19 @@ import { AccountsService } from "@/api/accounts";
 import { api } from "@/api/api";
 import { User } from "@/models/user";
 
-type AuthContextType = {
+interface AuthContextType {
     accessToken: string | undefined;
     user: User | undefined;
     login: (email: string, password: string) => Promise<void>;
     logout: () => Promise<void>;
     setAccessToken: (token: string | undefined) => void;
-};
+}
 
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-type Props = {
+interface Props {
     children: React.ReactNode;
-};
+}
 
 export const AuthProvider = ({ children }: Props) => {
     const [accessToken, setAccessToken] = useState<string | undefined>();

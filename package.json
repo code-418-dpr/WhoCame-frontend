@@ -1,5 +1,5 @@
 {
-    "name": "whocame-frontend",
+    "name": "vzor-frontend",
     "version": "0.0.1",
     "private": true,
     "scripts": {
@@ -14,10 +14,11 @@
         "axios": "^1.7.9",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
-        "lucide-react": "^0.475.0",
-        "next": "15.1.7",
+        "lucide-react": "^0.477.0",
+        "next": "15.2.1",
         "next-themes": "^0.4.4",
-        "react-router-dom": "^7.2.0"
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
     },
     "devDependencies": {
         "@eslint/compat": "^1.2.6",
@@ -46,16 +47,16 @@
         "autoprefixer": "^10.4.20",
         "cmdk": "^1.0.4",
         "eslint": "^9",
-        "eslint-config-next": "15.1.7",
+        "eslint-config-next": "^15.2.1",
         "postcss": "^8",
         "prettier": "^3.5.1",
         "react-hook-form": "^7.54.2",
-        "shadcn": "^2.3.0",
+        "shadcn": "^2.4.0-canary.12",
         "sonner": "^2.0.0",
         "stylelint": "^16.14.1",
         "stylelint-config-recommended": "^15.0.0",
         "stylelint-config-tailwindcss": "^1.0.0",
-        "tailwind-merge": "^3.0.1",
+        "tailwind-merge": "^3.0.2",
         "tailwindcss": "^4.0.7",
         "tailwindcss-animate": "^1.0.7",
         "typescript": "^5",

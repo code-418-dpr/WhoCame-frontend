@@ -5,8 +5,6 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-    --background: hsl(0 0% 100%);
-    --foreground: hsl(240 10% 3.9%);
     --card: hsl(0 0% 100%);
     --card-foreground: hsl(240 10% 3.9%);
     --popover: hsl(0 0% 100%);
@@ -38,6 +36,9 @@
     --sidebar-accent-foreground: hsl(240 5.9% 10%);
     --sidebar-border: hsl(220 13% 91%);
     --sidebar-ring: hsl(217.2 91.2% 59.8%);
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --sidebar: oklch(0.985 0 0);
 }
 
 .dark {
@@ -73,6 +74,7 @@
     --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
     --sidebar-border: hsl(240 3.7% 15.9%);
     --sidebar-ring: hsl(217.2 91.2% 59.8%);
+    --sidebar: oklch(0.205 0 0);
 }
 
 @theme inline {
